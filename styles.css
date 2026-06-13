@@ -99,13 +99,13 @@ img {
   position: fixed;
   z-index: 100;
   top: 0;
-  left: 50%;
-  width: var(--page);
+  left: 0;
+  width: 100%;
   height: 96px;
+  padding: 0 clamp(24px, 4vw, 72px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transform: translateX(-50%);
   transition: height 0.35s, background 0.35s, border-color 0.35s;
 }
 
@@ -396,14 +396,15 @@ nav a:hover::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 54% center;
+  object-position: 50% 72%;
   filter: saturate(0.78) contrast(1.04);
-  transform: scale(1.04);
+  transform: scale(1.22);
+  transform-origin: center 74%;
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-portrait:hover img {
-  transform: scale(1);
+  transform: scale(1.17);
 }
 
 .portrait-glow {
@@ -1026,15 +1027,16 @@ footer {
 
   .site-header {
     height: 74px;
+    padding: 0 24px;
   }
 
   nav {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: min(380px, 100vw);
-    height: 100vh;
-    padding: 120px 40px;
+    right: -100vw;
+    width: 100vw;
+    height: 100svh;
+    padding: 120px 24px 48px;
     flex-direction: column;
     align-items: flex-start;
     gap: 2.4rem;
@@ -1074,17 +1076,18 @@ footer {
   }
 
   .hero {
-    min-height: 1040px;
-    grid-template-columns: 1fr;
-    align-content: start;
+    min-height: auto;
+    display: block;
+    padding-top: 1px;
   }
 
   .hero-copy {
-    padding-top: 145px;
+    padding-top: 140px;
   }
 
   .hero-title {
-    font-size: clamp(4.2rem, 15vw, 8.5rem);
+    width: 100%;
+    font-size: clamp(4.2rem, 14.5vw, 8.5rem);
   }
 
   .hero-bottom {
@@ -1092,11 +1095,20 @@ footer {
   }
 
   .hero-portrait {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: min(70vw, 550px);
-    height: 600px;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(100%, 680px);
+    height: min(760px, 96vw);
+    margin: 64px 0 0 auto;
+  }
+
+  .hero-portrait img {
+    transform: scale(1.18);
+  }
+
+  .hero-portrait:hover img {
+    transform: scale(1.14);
   }
 
   .scroll-note {
@@ -1156,29 +1168,51 @@ footer {
     --page: calc(100vw - 32px);
   }
 
+  .site-header,
+  .site-header.scrolled {
+    height: 68px;
+    padding: 0 16px;
+  }
+
+  .site-header.scrolled {
+    border-bottom-color: var(--line);
+  }
+
   .header-cta {
     display: none;
   }
 
   .hero {
-    min-height: 880px;
+    min-height: auto;
+  }
+
+  .hero-copy {
+    padding-top: 118px;
   }
 
   .eyebrow {
     max-width: 270px;
+    margin-bottom: 2rem;
     line-height: 1.5;
   }
 
   .hero-title {
-    font-size: clamp(3.7rem, 19vw, 6.8rem);
+    font-size: clamp(3.45rem, 18vw, 5.4rem);
+    line-height: 0.83;
   }
 
   .hero-bottom {
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 18px;
+    margin-top: 2.5rem;
   }
 
   .hero-bottom > p {
+    max-width: 240px;
     font-size: 0.82rem;
+    line-height: 1.6;
   }
 
   .round-link {
@@ -1187,13 +1221,37 @@ footer {
   }
 
   .hero-portrait {
-    width: 87vw;
-    height: 490px;
-    opacity: 0.78;
+    width: 100%;
+    height: 520px;
+    margin-top: 38px;
+    opacity: 1;
+    border-radius: 46% 46% 3px 3px;
+  }
+
+  .hero-portrait img {
+    object-position: 50% 72%;
+    transform: scale(1.32);
+    transform-origin: center 72%;
+  }
+
+  .hero-portrait:hover img {
+    transform: scale(1.28);
   }
 
   .portrait-label {
+    right: 16px;
+    bottom: 17px;
+    left: 16px;
     font-size: 0.5rem;
+  }
+
+  .section-pad {
+    padding: 5.5rem 0;
+  }
+
+  .big-statement {
+    font-size: clamp(2.35rem, 12vw, 3.6rem);
+    overflow-wrap: anywhere;
   }
 
   .metrics {
@@ -1215,7 +1273,17 @@ footer {
   }
 
   .job-main h3 {
-    font-size: 2.3rem;
+    font-size: 2.15rem;
+  }
+
+  .job-meta {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 8px 12px;
+  }
+
+  .skill-card {
+    min-height: 340px;
+    padding: 28px;
   }
 
   .education-item {
@@ -1229,7 +1297,11 @@ footer {
   }
 
   .contact {
-    min-height: 800px;
+    min-height: 720px;
+  }
+
+  .contact-email {
+    font-size: clamp(3.5rem, 18vw, 5.5rem);
   }
 
   .contact-actions {
@@ -1239,9 +1311,12 @@ footer {
 
   footer {
     grid-template-columns: 1fr auto;
+    gap: 24px 12px;
   }
 
   .socials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     flex-wrap: wrap;
     gap: 1rem 1.5rem;
   }
