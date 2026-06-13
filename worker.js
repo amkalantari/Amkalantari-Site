@@ -22,7 +22,7 @@ export default {
       url.pathname === "/terms/";
 
     if (isAppDomain && isLegalRoute) {
-      const legalUrl = new URL("/legal/index.html", url);
+      const legalUrl = new URL("/legal/", url);
       return env.ASSETS.fetch(new Request(legalUrl, request));
     }
 
