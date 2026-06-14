@@ -2,7 +2,9 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
 
 const header = document.querySelector(".site-header");
 const menuButton = document.querySelector(".menu-button");
-const navLinks = document.querySelectorAll("nav a");
+const navLinks = document.querySelectorAll(".main-nav a");
+const appsNav = document.querySelector(".apps-nav");
+const appsToggle = document.querySelector(".apps-toggle");
 const year = document.querySelector("#year");
 
 year.textContent = new Date().getFullYear();
@@ -19,8 +21,31 @@ menuButton.addEventListener("click", () => {
   menuButton.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
 });
 
+const closeAppsMenu = () => {
+  appsNav.classList.remove("is-open");
+  appsToggle.setAttribute("aria-expanded", "false");
+};
+
+appsToggle.addEventListener("click", () => {
+  const isOpen = appsNav.classList.toggle("is-open");
+  appsToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+document.addEventListener("click", (event) => {
+  if (!appsNav.contains(event.target)) closeAppsMenu();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  closeAppsMenu();
+  document.body.classList.remove("menu-open");
+  menuButton.setAttribute("aria-expanded", "false");
+  menuButton.setAttribute("aria-label", "Open menu");
+});
+
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
+    closeAppsMenu();
     document.body.classList.remove("menu-open");
     menuButton.setAttribute("aria-expanded", "false");
     menuButton.setAttribute("aria-label", "Open menu");
