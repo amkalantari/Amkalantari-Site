@@ -529,7 +529,7 @@ img {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: 46% 46% 20px 20px;
+  border-radius: 50% 50% 20px 20px / 40% 40% 20px 20px;
   background: var(--surface);
   isolation: isolate;
 }
@@ -549,15 +549,15 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 66%;
+  object-position: 50% 69%;
   filter: saturate(0.86) contrast(1.03);
-  transform: scale(1.035);
-  transform-origin: center 66%;
+  transform: scale(1.2);
+  transform-origin: center 69%;
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-portrait:hover .portrait-frame img {
-  transform: scale(1.015);
+  transform: scale(1.16);
 }
 
 .portrait-glow {
@@ -1321,12 +1321,13 @@ footer {
   }
 
   .portrait-frame img {
-    object-position: 50% 64%;
-    transform: scale(1.025);
+    object-position: 50% 68%;
+    transform: scale(1.18);
+    transform-origin: center 68%;
   }
 
   .hero-portrait:hover .portrait-frame img {
-    transform: scale(1.01);
+    transform: scale(1.14);
   }
 
   .scroll-note {
@@ -1447,17 +1448,17 @@ footer {
   }
 
   .portrait-frame {
-    border-radius: 44% 44% 16px 16px;
+    border-radius: 50% 50% 16px 16px / 34% 34% 16px 16px;
   }
 
   .portrait-frame img {
-    object-position: 50% 61%;
-    transform: scale(1.02);
-    transform-origin: center 61%;
+    object-position: 50% 66%;
+    transform: scale(1.17);
+    transform-origin: center 66%;
   }
 
   .hero-portrait:hover .portrait-frame img {
-    transform: scale(1.01);
+    transform: scale(1.13);
   }
 
   .portrait-label {
