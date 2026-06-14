@@ -520,36 +520,44 @@ img {
   align-self: end;
   justify-self: end;
   width: min(39vw, 590px);
-  height: min(77vh, 810px);
+  aspect-ratio: 3 / 4;
+  max-height: min(78vh, 810px);
   overflow: visible;
-  border-radius: 47% 47% 4px 4px;
 }
 
-.hero-portrait::after {
+.portrait-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 46% 46% 20px 20px;
+  background: var(--surface);
+  isolation: isolate;
+}
+
+.portrait-frame::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, transparent 60%, rgba(8, 8, 8, 0.82) 100%),
-    linear-gradient(90deg, rgba(8, 8, 8, 0.1), transparent);
+    linear-gradient(180deg, transparent 68%, rgba(8, 8, 8, 0.62) 100%),
+    linear-gradient(90deg, rgba(8, 8, 8, 0.06), transparent 40%);
   border-radius: inherit;
   pointer-events: none;
 }
 
-.hero-portrait img {
+.portrait-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 72%;
-  border-radius: inherit;
-  filter: saturate(0.78) contrast(1.04);
-  transform: scale(1.22);
-  transform-origin: center 74%;
+  object-position: 50% 66%;
+  filter: saturate(0.86) contrast(1.03);
+  transform: scale(1.035);
+  transform-origin: center 66%;
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-portrait:hover img {
-  transform: scale(1.17);
+.hero-portrait:hover .portrait-frame img {
+  transform: scale(1.015);
 }
 
 .portrait-glow {
@@ -1306,16 +1314,19 @@ footer {
     right: auto;
     bottom: auto;
     width: min(100%, 680px);
-    height: min(760px, 96vw);
+    height: auto;
+    aspect-ratio: 3 / 4;
+    max-height: none;
     margin: 64px 0 0 auto;
   }
 
-  .hero-portrait img {
-    transform: scale(1.18);
+  .portrait-frame img {
+    object-position: 50% 64%;
+    transform: scale(1.025);
   }
 
-  .hero-portrait:hover img {
-    transform: scale(1.14);
+  .hero-portrait:hover .portrait-frame img {
+    transform: scale(1.01);
   }
 
   .scroll-note {
@@ -1429,20 +1440,24 @@ footer {
 
   .hero-portrait {
     width: 100%;
-    height: 520px;
+    height: auto;
+    aspect-ratio: 4 / 5;
     margin-top: 38px;
     opacity: 1;
-    border-radius: 46% 46% 3px 3px;
   }
 
-  .hero-portrait img {
-    object-position: 50% 72%;
-    transform: scale(1.32);
-    transform-origin: center 72%;
+  .portrait-frame {
+    border-radius: 44% 44% 16px 16px;
   }
 
-  .hero-portrait:hover img {
-    transform: scale(1.28);
+  .portrait-frame img {
+    object-position: 50% 61%;
+    transform: scale(1.02);
+    transform-origin: center 61%;
+  }
+
+  .hero-portrait:hover .portrait-frame img {
+    transform: scale(1.01);
   }
 
   .portrait-label {
