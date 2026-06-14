@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Support Amir Kalantari's independent Android apps and open product experiments."
+    />
+    <meta name="theme-color" content="#080a09" />
+    <meta property="og:title" content="Support Amir Kalantari" />
+    <meta
+      property="og:description"
+      content="Help fund independent Android apps, thoughtful experiments, and better digital products."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.amkalantari.com/donate" />
+    <title>Donate — Amir Kalantari</title>
+    <link rel="canonical" href="https://www.amkalantari.com/donate" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/donate/donate.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="donate-header">
+      <a class="brand" href="/" aria-label="Back to Amir Kalantari portfolio">
+        <span>AK</span><i></i>
+      </a>
+      <a class="back-link" href="/">
+        Back to portfolio
+        <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="donate-intro">
+        <p class="eyebrow"><i></i> Support independent work</p>
+        <h1>
+          Help me keep<br />
+          <span>building forward.</span>
+        </h1>
+        <p class="lead">
+          I design and build independent Android apps with care. Your support gives me more
+          time to improve them, explore useful ideas, and turn small experiments into
+          products people can rely on.
+        </p>
+        <div class="impact-list">
+          <span>Better updates</span>
+          <span>New app ideas</span>
+          <span>Independent development</span>
+        </div>
+        <blockquote>
+          Every contribution, at any size, is a quiet vote for thoughtful software. Thank
+          you for being part of the work.
+        </blockquote>
+      </section>
+
+      <section class="wallet-card" aria-labelledby="wallet-title">
+        <div class="card-topline">
+          <span>Crypto donation</span>
+          <span class="live-label"><i></i> Ready to receive</span>
+        </div>
+
+        <div class="token-heading">
+          <div class="token-mark">₮</div>
+          <div>
+            <p>Send</p>
+            <h2 id="wallet-title">USDT</h2>
+          </div>
+          <div class="network-badge">BEP20</div>
+        </div>
+
+        <div class="qr-frame">
+          <img
+            src="/assets/donate-usdt-bep20.png"
+            alt="QR code for Amir Kalantari's USDT wallet on the BEP20 network"
+            width="342"
+            height="350"
+          />
+        </div>
+
+        <div class="wallet-details">
+          <div class="detail-label">
+            <span>Wallet address</span>
+            <span>USDT · BNB Smart Chain</span>
+          </div>
+          <code id="wallet-address">0x570c6d501669d915F9bE626c097A0482BeD9354D</code>
+          <button class="copy-button" type="button" data-copy-address>
+            <span data-copy-label>Copy wallet address</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="8" y="8" width="11" height="11" rx="2"></rect>
+              <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="network-warning">
+          <strong>Use BEP20 only</strong>
+          Send only USDT using BNB Smart Chain (BEP20). Using another network may result in
+          permanent loss of funds.
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built independently. Supported by people who believe in the work.</p>
+      <p>© <span id="year"></span> Amir Kalantari</p>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" data-toast>
+      Wallet address copied
+    </div>
+    <script src="/donate/donate.js"></script>
+  </body>
+</html>
