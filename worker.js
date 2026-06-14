@@ -7,6 +7,7 @@ const APP_SUBDOMAINS = new Set([
   "qrly",
   "tiply",
   "hydratap",
+  "unitly",
 ]);
 
 export default {

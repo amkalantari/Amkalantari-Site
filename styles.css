@@ -1235,7 +1235,7 @@ footer {
   }
 
   .apps-nav.is-open .apps-menu {
-    max-height: 430px;
+    max-height: 500px;
     padding-top: 20px;
     transform: none;
   }

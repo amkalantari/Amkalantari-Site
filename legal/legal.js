@@ -47,6 +47,12 @@ const apps = {
     accent: "#3ddc84",
     rgb: "61, 220, 132",
   },
+  unitly: {
+    name: "Unitly",
+    initials: "UN",
+    accent: "#3ddc84",
+    rgb: "61, 220, 132",
+  },
 };
 
 const hostnameKey = window.location.hostname.toLowerCase().split(".")[0];
