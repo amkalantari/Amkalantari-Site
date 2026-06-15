@@ -42,7 +42,7 @@
         <p class="intro">
           Privacy and usage information for <strong data-app-name>this application</strong>.
         </p>
-        <div class="draft-notice">
+        <div class="draft-notice" data-draft-notice>
           <span>Draft</span>
           This temporary policy will be replaced with the final app-specific legal text.
         </div>
@@ -57,18 +57,18 @@
             </a>
             <a href="/terms" data-document-link="terms">
               <span>02</span>
-              Terms of Service
+              <span data-terms-label>Terms of Service</span>
             </a>
           </nav>
           <div class="app-meta">
             <p>Application</p>
             <strong data-app-name>Application</strong>
             <p>Last updated</p>
-            <strong>June 13, 2026</strong>
+            <strong data-last-updated>June 13, 2026</strong>
           </div>
         </aside>
 
-        <article class="legal-document" data-document="privacy">
+        <article class="legal-document" data-document="privacy" data-app-scope="default">
           <div class="document-heading">
             <span>01</span>
             <div>
@@ -128,7 +128,7 @@
           </section>
         </article>
 
-        <article class="legal-document" data-document="terms">
+        <article class="legal-document" data-document="terms" data-app-scope="default">
           <div class="document-heading">
             <span>02</span>
             <div>
@@ -185,6 +185,281 @@
             <p>
               Questions about these terms can be sent to
               <a href="mailto:Amkalantari@outlook.com">Amkalantari@outlook.com</a>.
+            </p>
+          </section>
+        </article>
+
+        <article
+          class="legal-document"
+          data-document="privacy"
+          data-app-scope="unitly"
+        >
+          <div class="document-heading">
+            <span>01</span>
+            <div>
+              <p>Last updated · June 2026</p>
+              <h2>Privacy Policy</h2>
+            </div>
+          </div>
+
+          <section>
+            <h3>Overview</h3>
+            <p>
+              Unitly (“the App”) is a unit conversion application developed by Amir
+              Kalantari. This Privacy Policy explains how information is collected, used,
+              and protected when you use the App.
+            </p>
+          </section>
+
+          <section>
+            <h3>Information We Collect</h3>
+            <p>
+              Unitly does not require account registration and does not collect personal
+              information such as:
+            </p>
+            <ul>
+              <li>Name</li>
+              <li>Email address</li>
+              <li>Phone number</li>
+              <li>Home address</li>
+              <li>Payment information</li>
+            </ul>
+            <p>The App may store limited data locally on your device, including:</p>
+            <ul>
+              <li>Recent conversions</li>
+              <li>App preferences</li>
+              <li>Theme settings</li>
+              <li>Language preferences</li>
+            </ul>
+            <p>
+              This information remains on your device and is not used to identify you
+              personally.
+            </p>
+          </section>
+
+          <section>
+            <h3>Advertising</h3>
+            <p>
+              The App may display advertisements through Google AdMob. Google AdMob may
+              collect certain information, including:
+            </p>
+            <ul>
+              <li>Device identifiers</li>
+              <li>Advertising identifiers</li>
+              <li>Device information</li>
+              <li>Approximate location</li>
+              <li>App interaction data</li>
+            </ul>
+            <p>
+              This information is used to provide and improve advertising services. For
+              more information, please review
+              <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>.
+            </p>
+          </section>
+
+          <section>
+            <h3>Analytics</h3>
+            <p>
+              The App may use Firebase Analytics to understand how users interact with the
+              App. Analytics information may include:
+            </p>
+            <ul>
+              <li>Device type</li>
+              <li>Operating system version</li>
+              <li>App version</li>
+              <li>General usage events</li>
+            </ul>
+            <p>
+              This information is collected in an aggregated and anonymous manner.
+            </p>
+          </section>
+
+          <section>
+            <h3>Crash Reporting</h3>
+            <p>
+              The App may use Firebase Crashlytics to identify and fix application issues.
+              Crash reports may include:
+            </p>
+            <ul>
+              <li>Device model</li>
+              <li>Operating system version</li>
+              <li>App version</li>
+              <li>Technical crash logs</li>
+            </ul>
+            <p>
+              No personal information is intentionally collected through crash reports.
+            </p>
+          </section>
+
+          <section>
+            <h3>Data Sharing</h3>
+            <p>
+              We do not sell, rent, or trade personal information. Certain technical
+              information may be processed by trusted third-party service providers,
+              including:
+            </p>
+            <ul>
+              <li>Google AdMob</li>
+              <li>Google Firebase</li>
+            </ul>
+            <p>
+              These providers process information according to their own privacy policies.
+            </p>
+          </section>
+
+          <section>
+            <h3>Data Security</h3>
+            <p>
+              Reasonable technical measures are used to protect application data. However,
+              no method of electronic storage or transmission is completely secure.
+            </p>
+          </section>
+
+          <section>
+            <h3>Children’s Privacy</h3>
+            <p>
+              The App is not directed toward children under the age of 13 and does not
+              knowingly collect personal information from children.
+            </p>
+          </section>
+
+          <section>
+            <h3>Changes to This Privacy Policy</h3>
+            <p>
+              We may update this Privacy Policy from time to time. Changes will be posted
+              on this page with an updated revision date.
+            </p>
+          </section>
+
+          <section>
+            <h3>Contact</h3>
+            <p>
+              If you have any questions regarding this Privacy Policy, please contact
+              <a href="mailto:amkalantari.dev@gmail.com">amkalantari.dev@gmail.com</a>.
+            </p>
+          </section>
+        </article>
+
+        <article class="legal-document" data-document="terms" data-app-scope="unitly">
+          <div class="document-heading">
+            <span>02</span>
+            <div>
+              <p>Last updated · June 2026</p>
+              <h2>Terms of Use</h2>
+            </div>
+          </div>
+
+          <section>
+            <h3>Welcome to Unitly</h3>
+            <p>
+              By downloading, installing, or using the App, you agree to these Terms of
+              Use.
+            </p>
+          </section>
+
+          <section>
+            <h3>Acceptance of Terms</h3>
+            <p>
+              By using Unitly, you agree to comply with these Terms. If you do not agree,
+              please discontinue use of the App.
+            </p>
+          </section>
+
+          <section>
+            <h3>App Purpose</h3>
+            <p>
+              Unitly is provided as a general-purpose unit conversion tool. While we strive
+              to provide accurate conversion results, we do not guarantee that all
+              calculations are free from errors.
+            </p>
+            <p>
+              Users should independently verify results when conversions are used for
+              professional, engineering, financial, medical, legal, scientific, or
+              safety-critical purposes.
+            </p>
+          </section>
+
+          <section>
+            <h3>License</h3>
+            <p>
+              You are granted a limited, non-exclusive, non-transferable license to use the
+              App for personal and lawful purposes. You may not:
+            </p>
+            <ul>
+              <li>Reverse engineer the App</li>
+              <li>Modify the App</li>
+              <li>Redistribute the App without permission</li>
+              <li>Use the App for unlawful activities</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Intellectual Property</h3>
+            <p>
+              All rights, title, and interest in the App, including its design, code,
+              graphics, branding, and content, remain the property of the developer unless
+              otherwise stated.
+            </p>
+          </section>
+
+          <section>
+            <h3>Third-Party Services</h3>
+            <p>The App may use third-party services including:</p>
+            <ul>
+              <li>Google AdMob</li>
+              <li>Firebase Analytics</li>
+              <li>Firebase Crashlytics</li>
+            </ul>
+            <p>
+              Use of these services may be subject to their respective terms and policies.
+            </p>
+          </section>
+
+          <section>
+            <h3>Disclaimer</h3>
+            <p>
+              The App is provided on an “AS IS” and “AS AVAILABLE” basis. We make no
+              warranties regarding:
+            </p>
+            <ul>
+              <li>Accuracy</li>
+              <li>Reliability</li>
+              <li>Availability</li>
+              <li>Fitness for a particular purpose</li>
+            </ul>
+            <p>Use of the App is at your own risk.</p>
+          </section>
+
+          <section>
+            <h3>Limitation of Liability</h3>
+            <p>
+              To the maximum extent permitted by law, the developer shall not be liable for
+              any indirect, incidental, special, consequential, or punitive damages
+              resulting from the use of the App.
+            </p>
+          </section>
+
+          <section>
+            <h3>Termination</h3>
+            <p>
+              We reserve the right to modify, suspend, or discontinue the App or any part
+              of the App at any time without notice.
+            </p>
+          </section>
+
+          <section>
+            <h3>Changes to Terms</h3>
+            <p>
+              These Terms may be updated from time to time. Continued use of the App after
+              changes are published constitutes acceptance of the revised Terms.
+            </p>
+          </section>
+
+          <section>
+            <h3>Contact</h3>
+            <p>
+              For questions regarding these Terms, please contact
+              <a href="mailto:amkalantari.dev@gmail.com">amkalantari.dev@gmail.com</a>.
             </p>
           </section>
         </article>

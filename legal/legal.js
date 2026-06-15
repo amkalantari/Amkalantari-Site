@@ -59,6 +59,7 @@ const hostnameKey = window.location.hostname.toLowerCase().split(".")[0];
 const queryKey = new URLSearchParams(window.location.search).get("app");
 const queryDocument = new URLSearchParams(window.location.search).get("document");
 const app = apps[hostnameKey] || apps[queryKey] || apps.agesnap;
+const appKey = apps[hostnameKey] ? hostnameKey : apps[queryKey] ? queryKey : "agesnap";
 const documentType =
   window.location.pathname.startsWith("/terms") || queryDocument === "terms"
     ? "terms"
@@ -66,7 +67,8 @@ const documentType =
 
 document.documentElement.style.setProperty("--accent", app.accent);
 document.documentElement.style.setProperty("--accent-rgb", app.rgb);
-document.title = `${documentType === "terms" ? "Terms of Service" : "Privacy Policy"} — ${app.name}`;
+const termsTitle = appKey === "unitly" ? "Terms of Use" : "Terms of Service";
+document.title = `${documentType === "terms" ? termsTitle : "Privacy Policy"} — ${app.name}`;
 
 document.querySelectorAll("[data-app-name]").forEach((element) => {
   element.textContent = app.name;
@@ -77,11 +79,22 @@ document.querySelectorAll("[data-app-initials]").forEach((element) => {
 });
 
 document.querySelectorAll("[data-document]").forEach((element) => {
-  element.classList.toggle("active", element.dataset.document === documentType);
+  const scope = element.dataset.appScope || "default";
+  const matchesApp = scope === appKey || (scope === "default" && appKey !== "unitly");
+  element.classList.toggle(
+    "active",
+    matchesApp && element.dataset.document === documentType,
+  );
 });
 
 document.querySelectorAll("[data-document-link]").forEach((element) => {
   element.classList.toggle("active", element.dataset.documentLink === documentType);
 });
+
+if (appKey === "unitly") {
+  document.querySelector("[data-draft-notice]").hidden = true;
+  document.querySelector("[data-last-updated]").textContent = "June 2026";
+  document.querySelector("[data-terms-label]").textContent = "Terms of Use";
+}
 
 document.querySelector("#year").textContent = new Date().getFullYear();

@@ -305,6 +305,39 @@ aside {
   line-height: 1.9;
 }
 
+.legal-document section p + p,
+.legal-document section ul + p {
+  margin-top: 1rem;
+}
+
+.legal-document section ul {
+  margin: 1.25rem 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+  list-style: none;
+}
+
+.legal-document section li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.legal-document section li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.45);
+}
+
 .legal-document section strong {
   color: var(--text);
   font-weight: 600;
